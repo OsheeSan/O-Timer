@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		844BA95D297FF824008226F0 /* TestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		844BA95D297FF824008226F0 /* Training-Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Training-Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		844BA960297FF824008226F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		844BA962297FF824008226F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		844BA967297FF824008226F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		844BA95E297FF824008226F0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				844BA95D297FF824008226F0 /* TestProject.app */,
+				844BA95D297FF824008226F0 /* Training-Timer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,9 +79,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		844BA95C297FF824008226F0 /* TestProject */ = {
+		844BA95C297FF824008226F0 /* Training-Timer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 844BA974297FF825008226F0 /* Build configuration list for PBXNativeTarget "TestProject" */;
+			buildConfigurationList = 844BA974297FF825008226F0 /* Build configuration list for PBXNativeTarget "Training-Timer" */;
 			buildPhases = (
 				844BA959297FF824008226F0 /* Sources */,
 				844BA95A297FF824008226F0 /* Frameworks */,
@@ -91,9 +91,9 @@
 			);
 			dependencies = (
 			);
-			name = TestProject;
+			name = "Training-Timer";
 			productName = TestProject;
-			productReference = 844BA95D297FF824008226F0 /* TestProject.app */;
+			productReference = 844BA95D297FF824008226F0 /* Training-Timer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -111,7 +111,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 844BA958297FF823008226F0 /* Build configuration list for PBXProject "TestProject" */;
+			buildConfigurationList = 844BA958297FF823008226F0 /* Build configuration list for PBXProject "Training-Timer" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -124,7 +124,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				844BA95C297FF824008226F0 /* TestProject */,
+				844BA95C297FF824008226F0 /* Training-Timer */,
 			);
 		};
 /* End PBXProject section */
@@ -228,7 +228,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -282,7 +282,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -357,7 +357,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		844BA958297FF823008226F0 /* Build configuration list for PBXProject "TestProject" */ = {
+		844BA958297FF823008226F0 /* Build configuration list for PBXProject "Training-Timer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				844BA972297FF825008226F0 /* Debug */,
@@ -366,7 +366,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		844BA974297FF825008226F0 /* Build configuration list for PBXNativeTarget "TestProject" */ = {
+		844BA974297FF825008226F0 /* Build configuration list for PBXNativeTarget "Training-Timer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				844BA975297FF825008226F0 /* Debug */,

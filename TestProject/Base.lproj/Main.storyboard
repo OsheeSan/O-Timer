@@ -13,7 +13,7 @@
         <!--BOX-Timer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="BOX-Timer" id="BYZ-38-t0r" customClass="TimerSettingsViewController" customModule="TestProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="BOX-Timer" id="BYZ-38-t0r" customClass="TimerSettingsViewController" customModule="Training_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,7 +188,7 @@
         <!--Training-->
         <scene sceneID="YPI-H0-tFn">
             <objects>
-                <viewController id="4EZ-iZ-LGb" customClass="TimerViewController" customModule="TestProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4EZ-iZ-LGb" customClass="TimerViewController" customModule="Training_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ikb-Ah-1FI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
