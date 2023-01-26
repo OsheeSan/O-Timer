@@ -16,6 +16,7 @@
 		84639BEC2981443000903A07 /* TimerSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84639BEB2981443000903A07 /* TimerSettingsViewController.swift */; };
 		84639BEE2981443F00903A07 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84639BED2981443F00903A07 /* TimerViewController.swift */; };
 		84639BF029828BD600903A07 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84639BEF29828BD600903A07 /* Functions.swift */; };
+		84639BF22982B24700903A07 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84639BF12982B24700903A07 /* Vibration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		84639BEB2981443000903A07 /* TimerSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSettingsViewController.swift; sourceTree = "<group>"; };
 		84639BED2981443F00903A07 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		84639BEF29828BD600903A07 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		84639BF12982B24700903A07 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				84639BEB2981443000903A07 /* TimerSettingsViewController.swift */,
 				84639BED2981443F00903A07 /* TimerViewController.swift */,
 				84639BEF29828BD600903A07 /* Functions.swift */,
+				84639BF12982B24700903A07 /* Vibration.swift */,
 			);
 			path = TestProject;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84639BF22982B24700903A07 /* Vibration.swift in Sources */,
 				844BA961297FF824008226F0 /* AppDelegate.swift in Sources */,
 				84639BEC2981443000903A07 /* TimerSettingsViewController.swift in Sources */,
 				844BA963297FF824008226F0 /* SceneDelegate.swift in Sources */,

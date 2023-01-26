@@ -16,11 +16,13 @@ class TimerSettingsViewController: UIViewController{
         rounds = sender.value
         print("Rounds: \(rounds) Time per round: \(timePerRound) Break \(breakTime)")
         updateLabels()
+        Vibration.light.vibrate()
     }
     @IBAction func TimeStepper(_ sender: UIStepper) {
         timePerRound = sender.value/2
         print("Rounds: \(rounds) Time per round: \(timePerRound) Break \(breakTime)")
         updateLabels()
+        Vibration.light.vibrate()
     }
     
     @IBOutlet weak var BreakView: UIView!
@@ -50,6 +52,7 @@ class TimerSettingsViewController: UIViewController{
         breakTime = sender.value/2
         print("Rounds: \(rounds) Time per round: \(timePerRound) Break \(breakTime)")
         updateLabels()
+        Vibration.light.vibrate()
     }
     
     var rounds: Double = 1
@@ -60,7 +63,7 @@ class TimerSettingsViewController: UIViewController{
     override func viewDidLoad() {
         print("Rounds: \(rounds) Time per round: \(timePerRound) Break \(breakTime)")
         super.viewDidLoad()
-        setupNavigationBar()
+        setupMenu()
         configureSwitch()
         updateLabels()
         TimeForBreakText.isEnabled = false
@@ -80,19 +83,22 @@ class TimerSettingsViewController: UIViewController{
         BreakSwitch.layer.cornerRadius = BreakSwitch.frame.height/2
     }
     
-    func setupNavigationBar(){
+    func setupMenu(){
         BreakView.clipsToBounds = true
         var rect = BreakView.viewWithTag(1)!
         rect.clipsToBounds = true
         rect.layer.cornerRadius = rect.frame.height/2.3
-        BreakView.layer.cornerRadius = rect.frame.height/2.3
+        BreakView.layer.cornerRadius = rect.frame.height/2.3+1
         rect = self.view.viewWithTag(1)!
         rect.clipsToBounds = true
         rect.layer.cornerRadius = 20
+        BreakView.viewWithTag(2)?.clipsToBounds = true
+        BreakView.viewWithTag(2)?.layer.cornerRadius = 20
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "StartTimer" {
+            Vibration.heavy.vibrate()
             print("Timer Started")
             let controller = segue.destination as! TimerViewController
             controller.timePerRound = Int(timePerRound*60)
