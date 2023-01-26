@@ -1,24 +1,266 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c1i-0i-9e5">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--BOX-Timer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="BOX-Timer" id="BYZ-38-t0r" customClass="TimerSettingsViewController" customModule="TestProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zwn-xm-crE">
+                                <rect key="frame" x="0.0" y="-34" width="320" height="162"/>
+                                <color key="backgroundColor" name="BarColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3Y-eX-6IO">
+                                <rect key="frame" x="0.0" y="250" width="320" height="338"/>
+                                <subviews>
+                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p3T-Md-g5w">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                        <color key="backgroundColor" name="RevertBarColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="qte-1k-Gdf"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="BarColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="p3T-Md-g5w" secondAttribute="trailing" id="fSd-fV-1H3"/>
+                                    <constraint firstItem="p3T-Md-g5w" firstAttribute="leading" secondItem="f3Y-eX-6IO" secondAttribute="leading" id="ob3-ex-9Oi"/>
+                                    <constraint firstItem="p3T-Md-g5w" firstAttribute="top" secondItem="f3Y-eX-6IO" secondAttribute="top" id="r0h-6O-3RE"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rounds:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAV-Za-3q4">
+                                <rect key="frame" x="16" y="141.5" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time per round:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsa-vB-wtD">
+                                <rect key="frame" x="16" y="185" width="129" height="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hme-3x-G8f">
+                                <rect key="frame" x="174" y="185" width="11" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWa-50-k63">
+                                <rect key="frame" x="174" y="142" width="11" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfb-Y4-CSl">
+                                <rect key="frame" x="44" y="496" width="232" height="34"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" name="RevertText"/>
+                                </state>
+                                <connections>
+                                    <segue destination="4EZ-iZ-LGb" kind="show" identifier="StartTimer" id="1y8-b3-eXA"/>
+                                </connections>
+                            </button>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Vaj-Xb-OVg">
+                                <rect key="frame" x="210" y="136" width="94" height="32"/>
+                                <connections>
+                                    <action selector="RoundsStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="UH0-LP-iu7"/>
+                                </connections>
+                            </stepper>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="7Zu-nQ-esa">
+                                <rect key="frame" x="210" y="179" width="94" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="WHe-YU-Ec8"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="TimeStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="HNo-Sn-F5i"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Break" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1q-Oo-ZRw">
+                                <rect key="frame" x="16" y="268.5" width="70.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <color key="textColor" name="RevertText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Efg-CW-BGm">
+                                <rect key="frame" x="257" y="268.5" width="51" height="31"/>
+                                <color key="onTintColor" systemColor="systemYellowColor"/>
+                                <connections>
+                                    <action selector="IsBreak:" destination="BYZ-38-t0r" eventType="valueChanged" id="aI4-sA-NAQ"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time for break" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eY5-jD-8LD">
+                                <rect key="frame" x="16" y="350" width="136" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" name="RevertText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRg-uY-lZE">
+                                <rect key="frame" x="174" y="350.5" width="11" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="RevertText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="sTj-TF-U1v">
+                                <rect key="frame" x="210" y="346" width="94" height="32"/>
+                                <connections>
+                                    <action selector="BreakTimeStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="6xs-g9-aB9"/>
+                                </connections>
+                            </stepper>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R1k-1E-nAC">
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7Zu-nQ-esa" firstAttribute="centerY" secondItem="Hme-3x-G8f" secondAttribute="centerY" id="1iX-iR-H2f"/>
+                            <constraint firstItem="Vaj-Xb-OVg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="43.666666666666657" id="2fM-7X-knt"/>
+                            <constraint firstItem="Hme-3x-G8f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Nsa-vB-wtD" secondAttribute="trailing" constant="8" symbolic="YES" id="7hi-sd-De7"/>
+                            <constraint firstItem="Vaj-Xb-OVg" firstAttribute="centerY" secondItem="RWa-50-k63" secondAttribute="centerY" id="7wn-m8-ZBq"/>
+                            <constraint firstItem="eY5-jD-8LD" firstAttribute="top" secondItem="l1q-Oo-ZRw" secondAttribute="bottom" constant="50" id="9B7-2n-vHz"/>
+                            <constraint firstItem="Nsa-vB-wtD" firstAttribute="leading" secondItem="mAV-Za-3q4" secondAttribute="leading" id="9CH-ix-nrJ"/>
+                            <constraint firstItem="Zwn-xm-crE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Aav-eg-gfN"/>
+                            <constraint firstItem="eY5-jD-8LD" firstAttribute="leading" secondItem="l1q-Oo-ZRw" secondAttribute="leading" id="CtF-5D-SFN"/>
+                            <constraint firstItem="Nsa-vB-wtD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DrG-n4-uLB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Efg-CW-BGm" secondAttribute="trailing" constant="14" id="FAT-5j-MPQ"/>
+                            <constraint firstItem="Efg-CW-BGm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="l1q-Oo-ZRw" secondAttribute="trailing" constant="8" symbolic="YES" id="Gjz-Nf-nVc"/>
+                            <constraint firstItem="Pfb-Y4-CSl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HFS-rN-sdu"/>
+                            <constraint firstItem="7Zu-nQ-esa" firstAttribute="top" secondItem="Vaj-Xb-OVg" secondAttribute="bottom" constant="11" id="KX5-Ma-CIj"/>
+                            <constraint firstItem="sTj-TF-U1v" firstAttribute="leading" secondItem="FRg-uY-lZE" secondAttribute="trailing" constant="25" id="LDH-Bz-JgG"/>
+                            <constraint firstItem="eY5-jD-8LD" firstAttribute="baseline" secondItem="FRg-uY-lZE" secondAttribute="baseline" id="NSv-E3-w32"/>
+                            <constraint firstItem="f3Y-eX-6IO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NrH-bR-gY1"/>
+                            <constraint firstItem="f3Y-eX-6IO" firstAttribute="top" secondItem="l1q-Oo-ZRw" secondAttribute="bottom" constant="-50" id="OAD-ga-Wwy"/>
+                            <constraint firstItem="Pfb-Y4-CSl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="Ofs-Qq-K52"/>
+                            <constraint firstItem="Vaj-Xb-OVg" firstAttribute="leading" secondItem="RWa-50-k63" secondAttribute="trailing" constant="25" id="Qbf-dG-AN8"/>
+                            <constraint firstItem="eY5-jD-8LD" firstAttribute="leading" secondItem="Nsa-vB-wtD" secondAttribute="leading" id="Qd4-fJ-nIP"/>
+                            <constraint firstItem="Vaj-Xb-OVg" firstAttribute="centerY" secondItem="mAV-Za-3q4" secondAttribute="centerY" id="R1z-sR-QW5"/>
+                            <constraint firstItem="Vaj-Xb-OVg" firstAttribute="top" secondItem="Zwn-xm-crE" secondAttribute="bottom" constant="8" id="SqS-eH-56o"/>
+                            <constraint firstItem="7Zu-nQ-esa" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="SsI-Aa-ZWu"/>
+                            <constraint firstItem="7Zu-nQ-esa" firstAttribute="leading" secondItem="Vaj-Xb-OVg" secondAttribute="leading" id="Yke-qm-LVd"/>
+                            <constraint firstItem="Zwn-xm-crE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YpU-IX-Tiz"/>
+                            <constraint firstItem="eY5-jD-8LD" firstAttribute="centerY" secondItem="sTj-TF-U1v" secondAttribute="centerY" id="Ysz-Qv-kbU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Pfb-Y4-CSl" secondAttribute="bottom" constant="38" id="ZQb-TX-1py"/>
+                            <constraint firstItem="sTj-TF-U1v" firstAttribute="centerY" secondItem="FRg-uY-lZE" secondAttribute="centerY" id="db8-XJ-d8m"/>
+                            <constraint firstItem="Zwn-xm-crE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-34" id="ejC-Ro-GKw"/>
+                            <constraint firstItem="FRg-uY-lZE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eY5-jD-8LD" secondAttribute="trailing" constant="8" symbolic="YES" id="fMg-SB-x3M"/>
+                            <constraint firstItem="l1q-Oo-ZRw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iCS-sS-wuz"/>
+                            <constraint firstItem="Nsa-vB-wtD" firstAttribute="centerY" secondItem="7Zu-nQ-esa" secondAttribute="centerY" id="jRW-xP-9PM"/>
+                            <constraint firstItem="RWa-50-k63" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mAV-Za-3q4" secondAttribute="trailing" constant="8" symbolic="YES" id="oHy-hx-fqf"/>
+                            <constraint firstAttribute="bottom" secondItem="f3Y-eX-6IO" secondAttribute="bottom" constant="-20" id="p8q-Yu-8Yv"/>
+                            <constraint firstItem="Nsa-vB-wtD" firstAttribute="baseline" secondItem="Hme-3x-G8f" secondAttribute="baseline" id="pJi-iN-JTm"/>
+                            <constraint firstItem="7Zu-nQ-esa" firstAttribute="leading" secondItem="Hme-3x-G8f" secondAttribute="trailing" constant="25" id="ph6-VY-Ez2"/>
+                            <constraint firstItem="f3Y-eX-6IO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qxB-AY-ZyF"/>
+                            <constraint firstItem="sTj-TF-U1v" firstAttribute="leading" secondItem="7Zu-nQ-esa" secondAttribute="leading" id="r9c-QG-zyF"/>
+                            <constraint firstItem="Efg-CW-BGm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="u9o-QM-p8q"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Training Timer" id="ugr-mW-Aa1">
+                        <barButtonItem key="backBarButtonItem" title="Training Timer" id="1g8-h0-lco"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="BreakTime" destination="FRg-uY-lZE" id="Td8-oV-JbQ"/>
+                        <outlet property="BreakTimeStepperOutlet" destination="sTj-TF-U1v" id="adn-ud-SEJ"/>
+                        <outlet property="BreakView" destination="f3Y-eX-6IO" id="e6v-eO-JAq"/>
+                        <outlet property="RoundsLabel" destination="RWa-50-k63" id="cbP-Z9-JXu"/>
+                        <outlet property="TimeForBreakText" destination="eY5-jD-8LD" id="UAV-Ht-m3a"/>
+                        <outlet property="TimePerRoundLabel" destination="Hme-3x-G8f" id="J8Z-J5-oIM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1603.125" y="-578.87323943661977"/>
+        </scene>
+        <!--Training-->
+        <scene sceneID="YPI-H0-tFn">
+            <objects>
+                <viewController id="4EZ-iZ-LGb" customClass="TimerViewController" customModule="TestProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ikb-Ah-1FI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKe-2T-idc">
+                                <rect key="frame" x="124.5" y="513" width="71" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Pause"/>
+                                <connections>
+                                    <action selector="PauseButtonTouched:" destination="4EZ-iZ-LGb" eventType="touchUpInside" id="eqw-vj-fmT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVL-Dc-PzF">
+                                <rect key="frame" x="60.5" y="236.5" width="199" height="95.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PjA-ul-ghF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pVL-Dc-PzF" firstAttribute="centerY" secondItem="Ikb-Ah-1FI" secondAttribute="centerY" id="BfD-7y-htf"/>
+                            <constraint firstItem="PjA-ul-ghF" firstAttribute="bottom" secondItem="SKe-2T-idc" secondAttribute="bottom" constant="20" id="EaK-NY-gpA"/>
+                            <constraint firstItem="SKe-2T-idc" firstAttribute="centerX" secondItem="Ikb-Ah-1FI" secondAttribute="centerX" id="Hwy-u8-G8O"/>
+                            <constraint firstItem="pVL-Dc-PzF" firstAttribute="centerX" secondItem="Ikb-Ah-1FI" secondAttribute="centerX" id="g3v-mr-JUY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Training" largeTitleDisplayMode="always" id="pdI-tL-Omp"/>
+                    <connections>
+                        <outlet property="PauseResumeButton" destination="SKe-2T-idc" id="b24-Oa-g7B"/>
+                        <outlet property="TimeLabel" destination="pVL-Dc-PzF" id="PHT-Kh-y9K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UTq-de-G6D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2598.75" y="-579.92957746478874"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nde-rG-2r7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c1i-0i-9e5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ACT-kG-SAE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="k7B-Ng-FWq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nj8-e0-FBD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="605.625" y="-578.87323943661977"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="BarColor">
+            <color red="1" green="0.45490196078431372" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="RevertBarColor">
+            <color red="0.65098039215686276" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="RevertText">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

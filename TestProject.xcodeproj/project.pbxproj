@@ -9,23 +9,27 @@
 /* Begin PBXBuildFile section */
 		844BA961297FF824008226F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BA960297FF824008226F0 /* AppDelegate.swift */; };
 		844BA963297FF824008226F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BA962297FF824008226F0 /* SceneDelegate.swift */; };
-		844BA965297FF824008226F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BA964297FF824008226F0 /* ViewController.swift */; };
 		844BA968297FF824008226F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BA966297FF824008226F0 /* Main.storyboard */; };
 		844BA96B297FF824008226F0 /* TestProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 844BA969297FF824008226F0 /* TestProject.xcdatamodeld */; };
 		844BA96D297FF825008226F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844BA96C297FF825008226F0 /* Assets.xcassets */; };
 		844BA970297FF825008226F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BA96E297FF825008226F0 /* LaunchScreen.storyboard */; };
+		84639BEC2981443000903A07 /* TimerSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84639BEB2981443000903A07 /* TimerSettingsViewController.swift */; };
+		84639BEE2981443F00903A07 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84639BED2981443F00903A07 /* TimerViewController.swift */; };
+		84639BF029828BD600903A07 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84639BEF29828BD600903A07 /* Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		844BA95D297FF824008226F0 /* TestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		844BA960297FF824008226F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		844BA962297FF824008226F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		844BA964297FF824008226F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		844BA967297FF824008226F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		844BA96A297FF824008226F0 /* TestProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestProject.xcdatamodel; sourceTree = "<group>"; };
 		844BA96C297FF825008226F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		844BA96F297FF825008226F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		844BA971297FF825008226F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84639BEB2981443000903A07 /* TimerSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSettingsViewController.swift; sourceTree = "<group>"; };
+		84639BED2981443F00903A07 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		84639BEF29828BD600903A07 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +64,14 @@
 			children = (
 				844BA960297FF824008226F0 /* AppDelegate.swift */,
 				844BA962297FF824008226F0 /* SceneDelegate.swift */,
-				844BA964297FF824008226F0 /* ViewController.swift */,
 				844BA966297FF824008226F0 /* Main.storyboard */,
 				844BA96C297FF825008226F0 /* Assets.xcassets */,
 				844BA96E297FF825008226F0 /* LaunchScreen.storyboard */,
 				844BA971297FF825008226F0 /* Info.plist */,
 				844BA969297FF824008226F0 /* TestProject.xcdatamodeld */,
+				84639BEB2981443000903A07 /* TimerSettingsViewController.swift */,
+				84639BED2981443F00903A07 /* TimerViewController.swift */,
+				84639BEF29828BD600903A07 /* Functions.swift */,
 			);
 			path = TestProject;
 			sourceTree = "<group>";
@@ -141,10 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				844BA965297FF824008226F0 /* ViewController.swift in Sources */,
 				844BA961297FF824008226F0 /* AppDelegate.swift in Sources */,
+				84639BEC2981443000903A07 /* TimerSettingsViewController.swift in Sources */,
 				844BA963297FF824008226F0 /* SceneDelegate.swift in Sources */,
+				84639BEE2981443F00903A07 /* TimerViewController.swift in Sources */,
 				844BA96B297FF824008226F0 /* TestProject.xcdatamodeld in Sources */,
+				84639BF029828BD600903A07 /* Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,8 +305,11 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,8 +336,11 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
