@@ -9,7 +9,7 @@ import Foundation
 
 func timeToString(_ timeInt : Int) -> String{
     var time: String {
-        var minutes: Int = timeInt / 60
+        let minutes: Int = timeInt / 60
         var res = ""
         if minutes < 10 {
             res = "0\(minutes):"

@@ -14,14 +14,18 @@ class TimerSettingsViewController: UIViewController{
     
     @IBAction func RoundsStepper(_ sender: UIStepper) {
         rounds = sender.value
+        print("Rounds: \(rounds) Time per round: \(timePerRound) Break \(breakTime)")
         updateLabels()
     }
     @IBAction func TimeStepper(_ sender: UIStepper) {
         timePerRound = sender.value/2
+        print("Rounds: \(rounds) Time per round: \(timePerRound) Break \(breakTime)")
         updateLabels()
     }
     
     @IBOutlet weak var BreakView: UIView!
+    
+    @IBOutlet weak var BreakSwitch: UISwitch!
     
     @IBAction func IsBreak(_ sender: UISwitch) {
         if sender.isOn{
@@ -44,17 +48,20 @@ class TimerSettingsViewController: UIViewController{
     
     @IBAction func BreakTimeStepper(_ sender: UIStepper) {
         breakTime = sender.value/2
+        print("Rounds: \(rounds) Time per round: \(timePerRound) Break \(breakTime)")
         updateLabels()
     }
     
-    var rounds: Double = 3
-    var timePerRound = 2.5
+    var rounds: Double = 1
+    var timePerRound = 0.5
     var withBreak = false
-    var breakTime: Double = 1
+    var breakTime: Double = 0.5
 
     override func viewDidLoad() {
+        print("Rounds: \(rounds) Time per round: \(timePerRound) Break \(breakTime)")
         super.viewDidLoad()
         setupNavigationBar()
+        configureSwitch()
         updateLabels()
         TimeForBreakText.isEnabled = false
         BreakTime.isEnabled = false
@@ -65,6 +72,12 @@ class TimerSettingsViewController: UIViewController{
         RoundsLabel.text = String(Int(rounds))
         TimePerRoundLabel.text = String(timePerRound)
         BreakTime.text = String(breakTime)
+    }
+    
+    func configureSwitch(){
+        BreakSwitch.backgroundColor = .red
+        BreakSwitch.clipsToBounds = true
+        BreakSwitch.layer.cornerRadius = BreakSwitch.frame.height/2
     }
     
     func setupNavigationBar(){

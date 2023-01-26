@@ -20,25 +20,26 @@ class TimerViewController: UIViewController {
     var isBreak = false {
         didSet {
             if isBreak {
-                self.view.backgroundColor = .yellow
+                timeStoped()
             } else {
-                self.view.backgroundColor = .green
+                timeStarted()
             }
         }
     }
     var currentTime: Int!
     var currentRound: Int!
     
-    
-    
-    
     @IBOutlet weak var PauseResumeButton: UIButton!
+    
+    @IBOutlet weak var ActivityView: UIView!
+    
     
     @IBAction func PauseButtonTouched(_ sender: UIButton) {
         timer.invalidate()
         if isTimerWorking {
-            
+            PauseResumeButton.setTitle("Resume", for: .normal)
         } else {
+            PauseResumeButton.setTitle("Pause", for: .normal)
             startTimer(time: currentTime)
         }
         isTimerWorking.toggle()
@@ -52,11 +53,35 @@ class TimerViewController: UIViewController {
         TimeLabel.text = timeToString(timePerRound)
         currentTime = timePerRound
         currentRound = 1
+        timeStarted()
         startTimer(time: timePerRound)
     }
     
     func startTimer(time : Int){
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(step), userInfo: nil, repeats: true)
+    }
+    
+    func timeEnded(){
+        let activityLabel = ActivityView.viewWithTag(1) as! UILabel
+        activityLabel.text = "End"
+        self.view.backgroundColor = .red
+        self.navigationController!.navigationBar.tintColor = .white
+        self.view.viewWithTag(2)?.isHidden = true
+        TimeLabel.textColor = .white
+    }
+    
+    func timeStarted(){
+        let activityLabel = ActivityView.viewWithTag(1) as! UILabel
+        activityLabel.text = "Training"
+        self.view.backgroundColor = .green
+        self.navigationController!.navigationBar.tintColor = .black
+    }
+    
+    func timeStoped(){
+        let activityLabel = ActivityView.viewWithTag(1) as! UILabel
+        activityLabel.text = "Break"
+        self.view.backgroundColor = .yellow
+        self.navigationController!.navigationBar.tintColor = .black
     }
     
     @objc func step(){
@@ -76,7 +101,7 @@ class TimerViewController: UIViewController {
                         startTimer(time: TimeForBreak)
                         isBreak.toggle()
                     } else {
-                        self.view.backgroundColor = .red
+                       timeEnded()
                     }
                 }
             } else {
@@ -85,7 +110,7 @@ class TimerViewController: UIViewController {
                     currentTime = timePerRound
                     startTimer(time: timePerRound)
                 } else {
-                    self.view.backgroundColor = .red
+                    timeEnded()
                 }
             }
         }

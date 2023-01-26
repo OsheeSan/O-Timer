@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c1i-0i-9e5">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zwn-xm-crE">
-                                <rect key="frame" x="0.0" y="-34" width="320" height="162"/>
+                                <rect key="frame" x="0.0" y="-34" width="320" height="146"/>
                                 <color key="backgroundColor" name="BarColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3Y-eX-6IO">
@@ -27,7 +27,7 @@
                                 <subviews>
                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p3T-Md-g5w">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
-                                        <color key="backgroundColor" name="RevertBarColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="qte-1k-Gdf"/>
                                         </constraints>
@@ -52,13 +52,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hme-3x-G8f">
-                                <rect key="frame" x="174" y="185" width="11" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hme-3x-G8f">
+                                <rect key="frame" x="161" y="185" width="24" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWa-50-k63">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWa-50-k63">
                                 <rect key="frame" x="174" y="142" width="11" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -66,21 +66,22 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfb-Y4-CSl">
                                 <rect key="frame" x="44" y="496" width="232" height="34"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Start">
-                                    <color key="titleColor" name="RevertText"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="4EZ-iZ-LGb" kind="show" identifier="StartTimer" id="1y8-b3-eXA"/>
                                 </connections>
                             </button>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Vaj-Xb-OVg">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Vaj-Xb-OVg">
                                 <rect key="frame" x="210" y="136" width="94" height="32"/>
                                 <connections>
                                     <action selector="RoundsStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="UH0-LP-iu7"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="7Zu-nQ-esa">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="7Zu-nQ-esa">
                                 <rect key="frame" x="210" y="179" width="94" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="WHe-YU-Ec8"/>
@@ -92,7 +93,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Break" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1q-Oo-ZRw">
                                 <rect key="frame" x="16" y="268.5" width="70.5" height="31.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <color key="textColor" name="RevertText"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Efg-CW-BGm">
@@ -105,13 +106,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time for break" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eY5-jD-8LD">
                                 <rect key="frame" x="16" y="350" width="136" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" name="RevertText"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRg-uY-lZE">
                                 <rect key="frame" x="174" y="350.5" width="11" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="RevertText"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="sTj-TF-U1v">
@@ -149,7 +150,7 @@
                             <constraint firstItem="Vaj-Xb-OVg" firstAttribute="leading" secondItem="RWa-50-k63" secondAttribute="trailing" constant="25" id="Qbf-dG-AN8"/>
                             <constraint firstItem="eY5-jD-8LD" firstAttribute="leading" secondItem="Nsa-vB-wtD" secondAttribute="leading" id="Qd4-fJ-nIP"/>
                             <constraint firstItem="Vaj-Xb-OVg" firstAttribute="centerY" secondItem="mAV-Za-3q4" secondAttribute="centerY" id="R1z-sR-QW5"/>
-                            <constraint firstItem="Vaj-Xb-OVg" firstAttribute="top" secondItem="Zwn-xm-crE" secondAttribute="bottom" constant="8" id="SqS-eH-56o"/>
+                            <constraint firstItem="Vaj-Xb-OVg" firstAttribute="top" secondItem="Zwn-xm-crE" secondAttribute="bottom" constant="24" id="SqS-eH-56o"/>
                             <constraint firstItem="7Zu-nQ-esa" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="SsI-Aa-ZWu"/>
                             <constraint firstItem="7Zu-nQ-esa" firstAttribute="leading" secondItem="Vaj-Xb-OVg" secondAttribute="leading" id="Yke-qm-LVd"/>
                             <constraint firstItem="Zwn-xm-crE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YpU-IX-Tiz"/>
@@ -173,6 +174,7 @@
                         <barButtonItem key="backBarButtonItem" title="Training Timer" id="1g8-h0-lco"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="BreakSwitch" destination="Efg-CW-BGm" id="HjO-jO-y3Q"/>
                         <outlet property="BreakTime" destination="FRg-uY-lZE" id="Td8-oV-JbQ"/>
                         <outlet property="BreakTimeStepperOutlet" destination="sTj-TF-U1v" id="adn-ud-SEJ"/>
                         <outlet property="BreakView" destination="f3Y-eX-6IO" id="e6v-eO-JAq"/>
@@ -185,7 +187,7 @@
             </objects>
             <point key="canvasLocation" x="1603.125" y="-578.87323943661977"/>
         </scene>
-        <!--Training-->
+        <!--Timer View Controller-->
         <scene sceneID="YPI-H0-tFn">
             <objects>
                 <viewController id="4EZ-iZ-LGb" customClass="TimerViewController" customModule="Training_Timer" customModuleProvider="target" sceneMemberID="viewController">
@@ -193,32 +195,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKe-2T-idc">
-                                <rect key="frame" x="124.5" y="513" width="71" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Pause"/>
-                                <connections>
-                                    <action selector="PauseButtonTouched:" destination="4EZ-iZ-LGb" eventType="touchUpInside" id="eqw-vj-fmT"/>
-                                </connections>
-                            </button>
+                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgS-DT-rQV">
+                                <rect key="frame" x="40" y="508" width="240" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKe-2T-idc">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="2Ew-Jb-Lxg"/>
+                                            <constraint firstAttribute="height" constant="40" id="9Lg-Gy-ZhE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Pause">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="PauseButtonTouched:" destination="4EZ-iZ-LGb" eventType="touchUpInside" id="eqw-vj-fmT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="b35-Lj-RBh"/>
+                                    <constraint firstItem="SKe-2T-idc" firstAttribute="centerX" secondItem="hgS-DT-rQV" secondAttribute="centerX" id="hK6-iG-Bud"/>
+                                    <constraint firstItem="SKe-2T-idc" firstAttribute="centerY" secondItem="hgS-DT-rQV" secondAttribute="centerY" id="lhu-Lx-V2k"/>
+                                    <constraint firstAttribute="height" constant="40" id="mDW-BQ-JB8"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVL-Dc-PzF">
-                                <rect key="frame" x="60.5" y="236.5" width="199" height="95.5"/>
+                                <rect key="frame" x="60.5" y="236.5" width="199" height="95"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJi-4g-vSa" userLabel="ActivityView">
+                                <rect key="frame" x="0.0" y="89" width="185" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Training" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5c-xh-4mX">
+                                        <rect key="frame" x="60" y="11.5" width="117" height="37"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="r5c-xh-4mX" firstAttribute="centerX" secondItem="OJi-4g-vSa" secondAttribute="centerX" constant="26" id="Im2-Up-Qex"/>
+                                    <constraint firstItem="r5c-xh-4mX" firstAttribute="centerY" secondItem="OJi-4g-vSa" secondAttribute="centerY" id="VVk-Vk-k65"/>
+                                    <constraint firstAttribute="width" constant="185" id="d9n-Zu-zQT"/>
+                                    <constraint firstAttribute="height" constant="60" id="ued-jL-Ctm"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PjA-ul-ghF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pVL-Dc-PzF" firstAttribute="centerY" secondItem="Ikb-Ah-1FI" secondAttribute="centerY" id="BfD-7y-htf"/>
-                            <constraint firstItem="PjA-ul-ghF" firstAttribute="bottom" secondItem="SKe-2T-idc" secondAttribute="bottom" constant="20" id="EaK-NY-gpA"/>
-                            <constraint firstItem="SKe-2T-idc" firstAttribute="centerX" secondItem="Ikb-Ah-1FI" secondAttribute="centerX" id="Hwy-u8-G8O"/>
-                            <constraint firstItem="pVL-Dc-PzF" firstAttribute="centerX" secondItem="Ikb-Ah-1FI" secondAttribute="centerX" id="g3v-mr-JUY"/>
+                            <constraint firstItem="pVL-Dc-PzF" firstAttribute="centerX" secondItem="Ikb-Ah-1FI" secondAttribute="centerX" id="BGi-u9-0co"/>
+                            <constraint firstItem="PjA-ul-ghF" firstAttribute="bottom" secondItem="hgS-DT-rQV" secondAttribute="bottom" constant="20" id="EuR-dk-ttl"/>
+                            <constraint firstItem="OJi-4g-vSa" firstAttribute="leading" secondItem="Ikb-Ah-1FI" secondAttribute="leading" id="R8B-gY-DrN"/>
+                            <constraint firstItem="OJi-4g-vSa" firstAttribute="top" secondItem="PjA-ul-ghF" secondAttribute="top" constant="45" id="Rjl-lo-LyZ"/>
+                            <constraint firstItem="hgS-DT-rQV" firstAttribute="centerX" secondItem="Ikb-Ah-1FI" secondAttribute="centerX" id="WD8-gA-pTD"/>
+                            <constraint firstItem="pVL-Dc-PzF" firstAttribute="centerY" secondItem="Ikb-Ah-1FI" secondAttribute="centerY" id="rHy-yq-hXC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Training" largeTitleDisplayMode="always" id="pdI-tL-Omp"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="pdI-tL-Omp"/>
                     <connections>
+                        <outlet property="ActivityView" destination="OJi-4g-vSa" id="u2A-Yh-pEV"/>
                         <outlet property="PauseResumeButton" destination="SKe-2T-idc" id="b24-Oa-g7B"/>
                         <outlet property="TimeLabel" destination="pVL-Dc-PzF" id="PHT-Kh-y9K"/>
                     </connections>
@@ -235,6 +278,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ACT-kG-SAE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -246,15 +293,10 @@
             <point key="canvasLocation" x="605.625" y="-578.87323943661977"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <namedColor name="BarColor">
             <color red="1" green="0.45490196078431372" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="RevertBarColor">
-            <color red="0.65098039215686276" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="RevertText">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
