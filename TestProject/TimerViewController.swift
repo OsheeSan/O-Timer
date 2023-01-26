@@ -17,7 +17,7 @@ class TimerViewController: UIViewController {
     var timer: Timer!
     
     var isTimerWorking = true
-    var isBreak = true {
+    var isBreak = false {
         didSet {
             if isBreak {
                 timeStoped()
@@ -38,8 +38,14 @@ class TimerViewController: UIViewController {
         timer.invalidate()
         if isTimerWorking {
             PauseResumeButton.setTitle("Resume", for: .normal)
+            self.view.backgroundColor = .gray
         } else {
             PauseResumeButton.setTitle("Pause", for: .normal)
+            if isBreak{
+                self.view.backgroundColor = .yellow
+            } else {
+                self.view.backgroundColor = .green
+            }
             startTimer(time: currentTime)
         }
         isTimerWorking.toggle()
@@ -48,12 +54,37 @@ class TimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         TimeLabel.text = timeToString(5)
+        activateProximitySensor(isOn: false)
         getReady()
         startReadyTimer(time: currentTime)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    func activateProximitySensor(isOn: Bool) {
+        let device = UIDevice.current
+        device.isProximityMonitoringEnabled = isOn
+        if isOn {
+            NotificationCenter.default.addObserver(self, selector: #selector(proximityStateDidChange), name: UIDevice.proximityStateDidChangeNotification, object: device)
+        } else {
+            NotificationCenter.default.removeObserver(self, name: UIDevice.proximityStateDidChangeNotification, object: device)
+        }
+    }
+    
+    var proximity = true
+    
+    @objc func proximityStateDidChange(notification: NSNotification) {
+        if let device = notification.object as? UIDevice {
+            if self.view.viewWithTag(2)?.isHidden == false && proximity{
+                PauseButtonTouched(PauseResumeButton)
+                proximity = false
+            } else {
+                proximity = true
+            }
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
         timer.invalidate()
+        activateProximitySensor(isOn: false)
     }
     
     func startTimer(time : Int){
@@ -115,7 +146,7 @@ class TimerViewController: UIViewController {
         let activityLabel = ActivityView.viewWithTag(1) as! UILabel
         activityLabel.text = "Get Ready"
         self.view.backgroundColor = .yellow
-        self.navigationController!.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.tintColor = .black
         self.view.viewWithTag(2)?.isHidden = true
         TimeLabel.textColor = .black
         currentTime = 5
@@ -128,30 +159,35 @@ class TimerViewController: UIViewController {
         let activityLabel = ActivityView.viewWithTag(1) as! UILabel
         activityLabel.text = "End"
         self.view.backgroundColor = .red
-        self.navigationController!.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.tintColor = .white
         self.view.viewWithTag(2)?.isHidden = true
         TimeLabel.textColor = .white
+        activateProximitySensor(isOn: false)
         Vibration.error.vibrate()
     }
     
     func timeStarted(){
+        activateProximitySensor(isOn: false)
         let activityLabel = ActivityView.viewWithTag(1) as! UILabel
         activityLabel.text = "Training"
         self.view.backgroundColor = .green
-        self.navigationController!.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.tintColor = .black
         self.view.viewWithTag(2)?.isHidden = false
         TimeLabel.textColor = .black
+        activateProximitySensor(isOn: true)
         Vibration.error.vibrate()
     }
     
     func timeStoped(){
+        activateProximitySensor(isOn: false)
         let activityLabel = ActivityView.viewWithTag(1) as! UILabel
         activityLabel.text = "Break"
         self.view.backgroundColor = .yellow
-        self.navigationController!.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.tintColor = .black
         self.view.viewWithTag(2)?.isHidden = false
         TimeLabel.textColor = .black
         Vibration.error.vibrate()
+        activateProximitySensor(isOn: true)
     }
     
 }
