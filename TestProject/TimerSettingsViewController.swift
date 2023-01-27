@@ -9,34 +9,43 @@ import UIKit
 
 class TimerSettingsViewController: UIViewController{
     
+    //MARK: - Title view
+    
+    @IBOutlet weak var TitleView: UIView!
+    
+    //MARK: - Info view
+    
     @IBOutlet weak var RoundsLabel: UILabel!
     @IBOutlet weak var TimePerRoundLabel: UILabel!
     
     @IBAction func RoundsStepper(_ sender: UIStepper) {
         rounds = sender.value
-        print("Rounds: \(rounds) Time per round: \(timePerRound) Break \(breakTime)")
         updateLabels()
         Vibration.light.vibrate()
         if rounds > 1 {
             BreakSwitch.isEnabled = true
-            configureSwitch()
+            updateBreakSwitch()
         } else {
             BreakSwitch.setOn(false, animated: true)
             BreakSwitch.isEnabled = false
-            configureSwitch()
+            updateBreakSwitch()
             IsBreak(BreakSwitch)
         }
     }
+    
     @IBAction func TimeStepper(_ sender: UIStepper) {
         timePerRound = sender.value/2
-        print("Rounds: \(rounds) Time per round: \(timePerRound) Break \(breakTime)")
         updateLabels()
         Vibration.light.vibrate()
     }
     
-    @IBOutlet weak var BreakView: UIView!
+    //MARK: - Break view
     
+    @IBOutlet weak var BreakView: UIView!
     @IBOutlet weak var BreakSwitch: UISwitch!
+    @IBOutlet weak var TimeForBreakText: UILabel!
+    @IBOutlet weak var BreakTime: UILabel!
+    @IBOutlet weak var BreakTimeStepperOutlet: UIStepper!
     
     @IBAction func IsBreak(_ sender: UISwitch) {
         if sender.isOn{
@@ -52,17 +61,19 @@ class TimerSettingsViewController: UIViewController{
         }
     }
     
-    
-    @IBOutlet weak var TimeForBreakText: UILabel!
-    @IBOutlet weak var BreakTime: UILabel!
-    @IBOutlet weak var BreakTimeStepperOutlet: UIStepper!
-    
     @IBAction func BreakTimeStepper(_ sender: UIStepper) {
         breakTime = sender.value/2
-        print("Rounds: \(rounds) Time per round: \(timePerRound) Break \(breakTime)")
         updateLabels()
         Vibration.light.vibrate()
     }
+    
+    //MARK: - Start Button View
+    
+    
+    @IBOutlet weak var StartButtonView: UIView!
+    
+    
+    //MARK: - Timer variables
     
     var rounds: Double = 1
     var timePerRound = 0.5
@@ -70,16 +81,12 @@ class TimerSettingsViewController: UIViewController{
     var breakTime: Double = 0.5
 
     override func viewDidLoad() {
-        print("Rounds: \(rounds) Time per round: \(timePerRound) Break \(breakTime)")
         super.viewDidLoad()
-        setupMenu()
+        setupTitleView()
+        setupBreakMenu()
+        setupStartButtonView()
         updateLabels()
-        BreakSwitch.setOn(false, animated: true)
-        BreakSwitch.isEnabled = false
-        configureSwitch()
-        TimeForBreakText.isEnabled = false
-        BreakTime.isEnabled = false
-        BreakTimeStepperOutlet.isEnabled = false
+        configureBreakSwitch()
     }
     
     func updateLabels(){
@@ -88,28 +95,46 @@ class TimerSettingsViewController: UIViewController{
         BreakTime.text = String(breakTime)
     }
     
-    func configureSwitch(){
+    func configureBreakSwitch(){
+        BreakSwitch.isEnabled = false
+        BreakSwitch.backgroundColor = .gray
+        BreakSwitch.clipsToBounds = true
+        BreakSwitch.layer.cornerRadius = BreakSwitch.frame.height/2
+    }
+    
+    func updateBreakSwitch(){
         if BreakSwitch.isEnabled {
             BreakSwitch.backgroundColor = .red
         } else {
             BreakSwitch.backgroundColor = .gray
         }
-        BreakSwitch.clipsToBounds = true
-        BreakSwitch.layer.cornerRadius = BreakSwitch.frame.height/2
     }
     
-    func setupMenu(){
-        BreakView.clipsToBounds = true
-        var rect = BreakView.viewWithTag(1)!
-        rect.clipsToBounds = true
-        rect.layer.cornerRadius = rect.frame.height/2.3
-        BreakView.layer.cornerRadius = rect.frame.height/2.3+1
-        rect = self.view.viewWithTag(1)!
-        rect.clipsToBounds = true
-        rect.layer.cornerRadius = 20
-        BreakView.viewWithTag(2)?.clipsToBounds = true
-        BreakView.viewWithTag(2)?.layer.cornerRadius = 20
+    func setupTitleView(){
+        TitleView.clipsToBounds = true
+        TitleView.layer.cornerRadius = 20
+        TitleView.backgroundColor = UIColor(named: "MainColor")
     }
+    
+    func setupStartButtonView(){
+        StartButtonView.backgroundColor = .black
+        StartButtonView.clipsToBounds = true
+        StartButtonView.layer.cornerRadius = 20
+    }
+    
+    func setupBreakMenu(){
+        BreakView.backgroundColor = UIColor(named: "MainColor")
+        TimeForBreakText.isEnabled = false
+        BreakTime.isEnabled = false
+        BreakTimeStepperOutlet.isEnabled = false
+        BreakView.clipsToBounds = true
+        var BreakSwitchView = BreakView.viewWithTag(1)!
+        BreakSwitchView.clipsToBounds = true
+        BreakSwitchView.layer.cornerRadius = BreakSwitchView.frame.height/2.3
+        BreakView.layer.cornerRadius = BreakSwitchView.frame.height/2.3+1
+    }
+    
+    //MARK: - Segue prepare
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "StartTimer" {
@@ -124,8 +149,4 @@ class TimerSettingsViewController: UIViewController{
     }
 
 }
-extension TimerSettingsViewController: UINavigationBarDelegate {
-    func position(for bar: UIBarPositioning) -> UIBarPosition {
-        return UIBarPosition.topAttached
-    }
-}
+
