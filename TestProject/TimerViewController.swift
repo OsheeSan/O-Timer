@@ -72,14 +72,12 @@ class TimerViewController: UIViewController {
     var proximity = true
     
     @objc func proximityStateDidChange(notification: NSNotification) {
-        if let device = notification.object as? UIDevice {
             if self.view.viewWithTag(2)?.isHidden == false && proximity{
                 PauseButtonTouched(PauseResumeButton)
                 proximity = false
             } else {
                 proximity = true
             }
-        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -93,6 +91,8 @@ class TimerViewController: UIViewController {
         
     
     func startReadyTimer(time : Int){
+        Vibration.heavy.vibrate()
+        self.view.backgroundColor = .yellow
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ready), userInfo: nil, repeats: true)
     }
     
@@ -132,20 +132,29 @@ class TimerViewController: UIViewController {
             } else {
                 if currentRound < rounds {
                     currentRound += 1
-                    currentTime = timePerRound
-                    startTimer(time: timePerRound)
+                    currentTime = 5
+                    startReadyTimer(time: currentTime)
+//                    startTimer(time: timePerRound)
                 } else {
                     timeEnded()
                 }
             }
         }
+        if currentTime <= 5 {
+            Vibration.heavy.vibrate()
+        }
         TimeLabel.text = "\(timeToString(currentTime))"
+        let roundLabel = view.viewWithTag(3)?.viewWithTag(1) as! UILabel
+        roundLabel.text = "\(currentRound!)/\(rounds)"
     }
     
     func getReady(){
         let activityLabel = ActivityView.viewWithTag(1) as! UILabel
         activityLabel.text = "Get Ready"
         self.view.backgroundColor = .yellow
+        view.viewWithTag(3)?.isHidden = true
+        view.viewWithTag(3)?.clipsToBounds = true
+        view.viewWithTag(3)?.layer.cornerRadius = 20
         self.navigationController?.navigationBar.tintColor = .black
         self.view.viewWithTag(2)?.isHidden = true
         TimeLabel.textColor = .black
@@ -153,9 +162,12 @@ class TimerViewController: UIViewController {
         currentRound = 1
         self.view.viewWithTag(2)?.clipsToBounds = true
         self.view.viewWithTag(2)?.layer.cornerRadius = 20
+        let roundLabel = view.viewWithTag(3)?.viewWithTag(1) as! UILabel
+        roundLabel.text = "\(currentRound!)/\(rounds)"
     }
     
     func timeEnded(){
+        view.viewWithTag(3)?.isHidden = true
         let activityLabel = ActivityView.viewWithTag(1) as! UILabel
         activityLabel.text = "End"
         self.view.backgroundColor = .red
@@ -167,6 +179,7 @@ class TimerViewController: UIViewController {
     }
     
     func timeStarted(){
+        view.viewWithTag(3)?.isHidden = false
         activateProximitySensor(isOn: false)
         let activityLabel = ActivityView.viewWithTag(1) as! UILabel
         activityLabel.text = "Training"
@@ -180,6 +193,7 @@ class TimerViewController: UIViewController {
     
     func timeStoped(){
         activateProximitySensor(isOn: false)
+        view.viewWithTag(3)?.isHidden = false
         let activityLabel = ActivityView.viewWithTag(1) as! UILabel
         activityLabel.text = "Break"
         self.view.backgroundColor = .yellow

@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3Y-eX-6IO">
-                                <rect key="frame" x="0.0" y="250" width="320" height="338"/>
+                                <rect key="frame" x="0.0" y="249.5" width="320" height="338.5"/>
                                 <subviews>
                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p3T-Md-g5w">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
@@ -32,7 +32,7 @@
                                         </constraints>
                                     </view>
                                     <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tyt-0o-HXc">
-                                        <rect key="frame" x="40" y="223" width="240" height="50"/>
+                                        <rect key="frame" x="40" y="223.5" width="240" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfb-Y4-CSl">
                                                 <rect key="frame" x="88.5" y="3" width="63" height="45"/>
@@ -104,7 +104,7 @@
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Break" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1q-Oo-ZRw">
-                                <rect key="frame" x="16" y="268.5" width="70.5" height="31.5"/>
+                                <rect key="frame" x="16" y="268.5" width="70.5" height="31"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -117,19 +117,19 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time for break" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eY5-jD-8LD">
-                                <rect key="frame" x="16" y="350" width="136" height="24"/>
+                                <rect key="frame" x="16" y="349.5" width="136" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRg-uY-lZE">
-                                <rect key="frame" x="174" y="350.5" width="11" height="23"/>
+                                <rect key="frame" x="174" y="350" width="11" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="sTj-TF-U1v">
-                                <rect key="frame" x="210" y="346" width="94" height="32"/>
+                                <rect key="frame" x="210" y="345.5" width="94" height="32"/>
                                 <connections>
                                     <action selector="BreakTimeStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="6xs-g9-aB9"/>
                                 </connections>
@@ -243,7 +243,7 @@
                                 <rect key="frame" x="0.0" y="89" width="185" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Ready" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5c-xh-4mX">
-                                        <rect key="frame" x="27" y="12" width="150" height="37"/>
+                                        <rect key="frame" x="27" y="11.5" width="150" height="37"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -257,15 +257,46 @@
                                     <constraint firstAttribute="height" constant="60" id="ued-jL-Ctm"/>
                                 </constraints>
                             </view>
+                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j5z-jf-gOl">
+                                <rect key="frame" x="40" y="420" width="240" height="53"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bx4-Wc-7Bp">
+                                        <rect key="frame" x="8" y="8" width="92" height="37"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3Y-eB-n2d">
+                                        <rect key="frame" x="210" y="8" width="22" height="37"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="31"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Bx4-Wc-7Bp" secondAttribute="bottom" constant="8" id="0aC-8N-EeJ"/>
+                                    <constraint firstItem="v3Y-eB-n2d" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Bx4-Wc-7Bp" secondAttribute="trailing" constant="110" id="GgP-pg-OeW"/>
+                                    <constraint firstAttribute="height" constant="53" id="Jkl-yh-nVH"/>
+                                    <constraint firstItem="v3Y-eB-n2d" firstAttribute="top" secondItem="j5z-jf-gOl" secondAttribute="top" constant="8" id="OAn-by-hDY"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="bEK-OH-C0a"/>
+                                    <constraint firstItem="Bx4-Wc-7Bp" firstAttribute="top" secondItem="j5z-jf-gOl" secondAttribute="top" constant="8" id="eSz-XB-kJn"/>
+                                    <constraint firstAttribute="bottom" secondItem="v3Y-eB-n2d" secondAttribute="bottom" constant="8" id="jhN-2Y-x8X"/>
+                                    <constraint firstAttribute="trailing" secondItem="v3Y-eB-n2d" secondAttribute="trailing" constant="8" id="kJX-nu-dhT"/>
+                                    <constraint firstItem="Bx4-Wc-7Bp" firstAttribute="leading" secondItem="j5z-jf-gOl" secondAttribute="leading" constant="8" id="wWa-29-9pd"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PjA-ul-ghF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="pVL-Dc-PzF" firstAttribute="centerX" secondItem="Ikb-Ah-1FI" secondAttribute="centerX" id="BGi-u9-0co"/>
                             <constraint firstItem="PjA-ul-ghF" firstAttribute="bottom" secondItem="hgS-DT-rQV" secondAttribute="bottom" constant="20" id="EuR-dk-ttl"/>
+                            <constraint firstItem="hgS-DT-rQV" firstAttribute="top" secondItem="j5z-jf-gOl" secondAttribute="bottom" constant="35" id="PbW-Sh-Pnh"/>
                             <constraint firstItem="OJi-4g-vSa" firstAttribute="leading" secondItem="Ikb-Ah-1FI" secondAttribute="leading" id="R8B-gY-DrN"/>
                             <constraint firstItem="OJi-4g-vSa" firstAttribute="top" secondItem="PjA-ul-ghF" secondAttribute="top" constant="45" id="Rjl-lo-LyZ"/>
                             <constraint firstItem="hgS-DT-rQV" firstAttribute="centerX" secondItem="Ikb-Ah-1FI" secondAttribute="centerX" id="WD8-gA-pTD"/>
+                            <constraint firstItem="j5z-jf-gOl" firstAttribute="centerX" secondItem="Ikb-Ah-1FI" secondAttribute="centerX" id="Xf8-Ja-FUp"/>
                             <constraint firstItem="pVL-Dc-PzF" firstAttribute="centerY" secondItem="Ikb-Ah-1FI" secondAttribute="centerY" id="rHy-yq-hXC"/>
                         </constraints>
                     </view>
@@ -278,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UTq-de-G6D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2598.75" y="-579.92957746478874"/>
+            <point key="canvasLocation" x="2598.1395348837209" y="-580.04291845493572"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nde-rG-2r7">

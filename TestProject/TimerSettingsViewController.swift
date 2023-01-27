@@ -17,6 +17,15 @@ class TimerSettingsViewController: UIViewController{
         print("Rounds: \(rounds) Time per round: \(timePerRound) Break \(breakTime)")
         updateLabels()
         Vibration.light.vibrate()
+        if rounds > 1 {
+            BreakSwitch.isEnabled = true
+            configureSwitch()
+        } else {
+            BreakSwitch.setOn(false, animated: true)
+            BreakSwitch.isEnabled = false
+            configureSwitch()
+            IsBreak(BreakSwitch)
+        }
     }
     @IBAction func TimeStepper(_ sender: UIStepper) {
         timePerRound = sender.value/2
@@ -64,8 +73,10 @@ class TimerSettingsViewController: UIViewController{
         print("Rounds: \(rounds) Time per round: \(timePerRound) Break \(breakTime)")
         super.viewDidLoad()
         setupMenu()
-        configureSwitch()
         updateLabels()
+        BreakSwitch.setOn(false, animated: true)
+        BreakSwitch.isEnabled = false
+        configureSwitch()
         TimeForBreakText.isEnabled = false
         BreakTime.isEnabled = false
         BreakTimeStepperOutlet.isEnabled = false
@@ -78,7 +89,11 @@ class TimerSettingsViewController: UIViewController{
     }
     
     func configureSwitch(){
-        BreakSwitch.backgroundColor = .red
+        if BreakSwitch.isEnabled {
+            BreakSwitch.backgroundColor = .red
+        } else {
+            BreakSwitch.backgroundColor = .gray
+        }
         BreakSwitch.clipsToBounds = true
         BreakSwitch.layer.cornerRadius = BreakSwitch.frame.height/2
     }
