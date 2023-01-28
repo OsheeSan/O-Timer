@@ -11,6 +11,7 @@ class TimerSettingsViewController: UIViewController{
     //MARK: - CGColours
     
     let mainColor = CGColor(red: 1, green: 0.812, blue: 0, alpha: 1)
+    let blackColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
     
     //MARK: - Title view
     
@@ -56,11 +57,25 @@ class TimerSettingsViewController: UIViewController{
             BreakTime.isEnabled = true
             BreakTimeStepperOutlet.isEnabled = true
             withBreak = true
+            UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
+                self.BreakView.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.BreakView.backgroundColor = UIColor(named: "MainColor")
+                self.BreakView.viewWithTag(1)?.backgroundColor = .black
+                let BreakLabel = self.BreakView.viewWithTag(2) as? UILabel
+                BreakLabel?.textColor = .white
+            })
         } else {
             TimeForBreakText.isEnabled = false
             BreakTime.isEnabled = false
             BreakTimeStepperOutlet.isEnabled = false
             withBreak = false
+            UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
+                self.BreakView.transform = CGAffineTransform(translationX: 0, y: 110)
+                self.BreakView.backgroundColor = .black
+                self.BreakView.viewWithTag(1)?.backgroundColor = UIColor(named: "MainColor")
+                let BreakLabel = self.BreakView.viewWithTag(2) as? UILabel
+                BreakLabel?.textColor = .black
+            })
         }
     }
     
@@ -71,7 +86,6 @@ class TimerSettingsViewController: UIViewController{
     }
     
     //MARK: - Start Button View
-    
     
     @IBOutlet weak var StartButtonView: UIView!
     
@@ -110,7 +124,7 @@ class TimerSettingsViewController: UIViewController{
     
     func updateBreakSwitch(){
         if BreakSwitch.isEnabled {
-            BreakSwitch.backgroundColor = .red
+            BreakSwitch.backgroundColor = .black
         } else {
             BreakSwitch.backgroundColor = .gray
         }
@@ -127,20 +141,28 @@ class TimerSettingsViewController: UIViewController{
         StartButtonView.clipsToBounds = true
         StartButtonView.layer.cornerRadius = 20
         StartButtonView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        let startButtonCorner = StartButtonView.viewWithTag(2)
-        startButtonCorner?.clipsToBounds = true
-        startButtonCorner?.layer.cornerRadius = 25
-        startButtonCorner?.layer.borderColor = mainColor
-        startButtonCorner?.layer.borderWidth = 1
+        let startButton = StartButtonView.viewWithTag(2)
+        startButton?.clipsToBounds = true
+        startButton?.layer.cornerRadius = 25
+        startButton?.layer.borderColor = mainColor
+        startButton?.layer.borderWidth = 1
+        let button = startButton?.viewWithTag(3) as? UIButton
+        button?.clipsToBounds = true
+        button?.layer.cornerRadius = 25
+        button?.setBackgroundColor(UIColor(named: "MainColor")!, for: .highlighted)
     }
     
     func setupBreakMenu(){
-        BreakView.backgroundColor = UIColor(named: "MainColor")
+        BreakView.transform = CGAffineTransform(translationX: 0, y: 110)
+        BreakView.backgroundColor = .black
+        BreakView.viewWithTag(1)?.backgroundColor = UIColor(named: "MainColor")
+        let BreakLabel = self.BreakView.viewWithTag(2) as? UILabel
+        BreakLabel?.textColor = .black
         TimeForBreakText.isEnabled = false
         BreakTime.isEnabled = false
         BreakTimeStepperOutlet.isEnabled = false
         BreakView.clipsToBounds = true
-        var BreakSwitchView = BreakView.viewWithTag(1)!
+        let BreakSwitchView = BreakView.viewWithTag(1)!
         BreakSwitchView.clipsToBounds = true
         BreakSwitchView.layer.cornerRadius = BreakSwitchView.frame.height/2.3
         BreakView.layer.cornerRadius = BreakSwitchView.frame.height/2.3+1
@@ -161,4 +183,22 @@ class TimerSettingsViewController: UIViewController{
     }
 
 }
+extension UIButton {
+    private func image(withColor color: UIColor) -> UIImage? {
+        let rect = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
 
+        context?.setFillColor(color.cgColor)
+        context?.fill(rect)
+
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return image
+    }
+
+    func setBackgroundColor(_ color: UIColor, for state: UIControl.State) {
+        self.setBackgroundImage(image(withColor: color), for: state)
+    }
+}
