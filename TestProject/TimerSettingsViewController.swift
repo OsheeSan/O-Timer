@@ -80,7 +80,7 @@ class TimerSettingsViewController: UIViewController{
     }
     
     @IBAction func BreakTimeStepper(_ sender: UIStepper) {
-        breakTime = sender.value/2
+        breakTime = sender.value/4
         updateLabels()
         Vibration.light.vibrate()
     }
@@ -95,7 +95,7 @@ class TimerSettingsViewController: UIViewController{
     var rounds: Double = 1
     var timePerRound = 0.5
     var withBreak = false
-    var breakTime: Double = 0.5
+    var breakTime: Double = 0.25
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,11 +123,13 @@ class TimerSettingsViewController: UIViewController{
     }
     
     func updateBreakSwitch(){
-        if BreakSwitch.isEnabled {
-            BreakSwitch.backgroundColor = .black
-        } else {
-            BreakSwitch.backgroundColor = .gray
-        }
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
+            if self.BreakSwitch.isEnabled {
+                self.BreakSwitch.backgroundColor = .black
+            } else {
+                self.BreakSwitch.backgroundColor = .gray
+            }
+        })
     }
     
     func setupTitleView(){

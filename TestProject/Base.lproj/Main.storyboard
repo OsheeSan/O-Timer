@@ -4,6 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,11 +20,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zwn-xm-crE" userLabel="Title View">
-                                <rect key="frame" x="0.0" y="-34" width="320" height="126.5"/>
+                                <rect key="frame" x="0.0" y="-34" width="320" height="146.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IaM-9r-bew">
+                                        <rect key="frame" x="252" y="45.5" width="60" height="55.5"/>
+                                        <color key="tintColor" name="RevertLabel"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Bv5-eI-pSm"/>
+                                            <constraint firstAttribute="width" constant="60" id="y0D-YZ-4Ui"/>
+                                        </constraints>
+                                        <imageReference key="image" image="timer" catalog="system" symbolScale="small"/>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstItem="IaM-9r-bew" firstAttribute="centerY" secondItem="Zwn-xm-crE" secondAttribute="centerY" id="3lB-zc-vvY"/>
+                                    <constraint firstAttribute="trailing" secondItem="IaM-9r-bew" secondAttribute="trailing" constant="8" id="kbL-Cn-Xxq"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQx-6Z-lZO" userLabel="Info View">
-                                <rect key="frame" x="0.0" y="92.5" width="320" height="128"/>
+                                <rect key="frame" x="0.0" y="112.5" width="320" height="128"/>
                                 <subviews>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="7Zu-nQ-esa">
                                         <rect key="frame" x="218" y="63" width="94" height="32"/>
@@ -208,7 +226,7 @@
                             <constraint firstItem="oQx-6Z-lZO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0Fa-T2-Agp"/>
                             <constraint firstItem="f3Y-eX-6IO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1ji-Iq-Aum"/>
                             <constraint firstAttribute="bottom" secondItem="BYF-U0-gAC" secondAttribute="bottom" constant="-10" id="AbI-eo-z1W"/>
-                            <constraint firstItem="oQx-6Z-lZO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AsL-sj-Lxy"/>
+                            <constraint firstItem="oQx-6Z-lZO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="AsL-sj-Lxy"/>
                             <constraint firstItem="BYF-U0-gAC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bcd-Hi-cxM"/>
                             <constraint firstAttribute="bottomMargin" secondItem="f3Y-eX-6IO" secondAttribute="bottom" constant="-33.5" id="CSx-q5-6wz"/>
                             <constraint firstItem="Zwn-xm-crE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DAk-wX-DSc"/>
@@ -361,7 +379,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c1i-0i-9e5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ACT-kG-SAE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
@@ -383,6 +401,10 @@
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
+        <image name="timer" catalog="system" width="128" height="123"/>
+        <namedColor name="RevertLabel">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

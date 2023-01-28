@@ -39,16 +39,16 @@ class TimerViewController: UIViewController {
     @IBAction func PauseButtonTouched(_ sender: UIButton) {
         timer.invalidate()
         if isTimerWorking {
-            UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
                 self.PauseResumeButton.setTitle("Resume", for: .normal)
                 self.view.backgroundColor = .gray
             })
             
         } else {
-            UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
                 self.PauseResumeButton.setTitle("Pause", for: .normal)
                 if self.isBreak{
-                self.view.backgroundColor = .yellow
+                self.view.backgroundColor = UIColor(named: "MainColor")
             } else {
                 self.view.backgroundColor = .green
             }
@@ -163,10 +163,9 @@ class TimerViewController: UIViewController {
     }
     
     func getReady(){
-        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
             let activityLabel = self.ActivityView.viewWithTag(1) as! UILabel
             activityLabel.text = "Get Ready"
-            self.view.backgroundColor = .yellow
+            self.view.backgroundColor = UIColor(named: "MainColor")
             self.view.viewWithTag(3)?.isHidden = true
             self.view.viewWithTag(3)?.clipsToBounds = true
             self.view.viewWithTag(3)?.layer.cornerRadius = 20
@@ -179,11 +178,11 @@ class TimerViewController: UIViewController {
             self.view.viewWithTag(2)?.layer.cornerRadius = 20
             let roundLabel = self.view.viewWithTag(3)?.viewWithTag(1) as! UILabel
             roundLabel.text = "\(self.currentRound!)/\(self.rounds)"
-        })
+        
     }
     
     func timeEnded(){
-        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
             self.view.viewWithTag(3)?.isHidden = true
             let activityLabel = self.ActivityView.viewWithTag(1) as! UILabel
             activityLabel.text = "End"
@@ -198,7 +197,7 @@ class TimerViewController: UIViewController {
     
     func timeStarted(){
         activateProximitySensor(isOn: false)
-        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
             self.view.viewWithTag(3)?.isHidden = false
             let activityLabel = self.ActivityView.viewWithTag(1) as! UILabel
             activityLabel.text = "Training"
@@ -213,11 +212,11 @@ class TimerViewController: UIViewController {
     
     func timeStoped(){
         activateProximitySensor(isOn: false)
-        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
             self.view.viewWithTag(3)?.isHidden = false
             let activityLabel = self.ActivityView.viewWithTag(1) as! UILabel
             activityLabel.text = "Break"
-            self.view.backgroundColor = .yellow
+            self.view.backgroundColor = UIColor(named: "MainColor")
             self.navigationController?.navigationBar.tintColor = .black
             self.view.viewWithTag(2)?.isHidden = false
             self.TimeLabel.textColor = .black
