@@ -9,6 +9,8 @@ import UIKit
 
 class TimerViewController: UIViewController {
     
+    //MARK: - Timer variables
+    
     var rounds = 1
     var timePerRound = 1
     var withBreak = false
@@ -53,10 +55,17 @@ class TimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupActivityView()
         TimeLabel.text = timeToString(5)
         activateProximitySensor(isOn: false)
         getReady()
         startReadyTimer(time: currentTime)
+    }
+    
+    func setupActivityView(){
+        ActivityView.clipsToBounds = true
+        ActivityView.layer.cornerRadius = 20
+        ActivityView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
     }
     
     func activateProximitySensor(isOn: Bool) {

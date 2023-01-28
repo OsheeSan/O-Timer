@@ -8,6 +8,9 @@
 import UIKit
 
 class TimerSettingsViewController: UIViewController{
+    //MARK: - CGColours
+    
+    let mainColor = CGColor(red: 1, green: 0.812, blue: 0, alpha: 1)
     
     //MARK: - Title view
     
@@ -87,7 +90,10 @@ class TimerSettingsViewController: UIViewController{
         setupStartButtonView()
         updateLabels()
         configureBreakSwitch()
+        
     }
+    
+    //MARK: - Helper methods
     
     func updateLabels(){
         RoundsLabel.text = String(Int(rounds))
@@ -120,6 +126,12 @@ class TimerSettingsViewController: UIViewController{
         StartButtonView.backgroundColor = .black
         StartButtonView.clipsToBounds = true
         StartButtonView.layer.cornerRadius = 20
+        StartButtonView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        let startButtonCorner = StartButtonView.viewWithTag(2)
+        startButtonCorner?.clipsToBounds = true
+        startButtonCorner?.layer.cornerRadius = 25
+        startButtonCorner?.layer.borderColor = mainColor
+        startButtonCorner?.layer.borderWidth = 1
     }
     
     func setupBreakMenu(){
