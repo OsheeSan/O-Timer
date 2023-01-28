@@ -74,7 +74,7 @@ class TimerSettingsViewController: UIViewController{
                 self.BreakView.backgroundColor = .black
                 self.BreakView.viewWithTag(1)?.backgroundColor = UIColor(named: "MainColor")
                 let BreakLabel = self.BreakView.viewWithTag(2) as? UILabel
-                BreakLabel?.textColor = .black
+                BreakLabel?.textColor = UIColor(named: "RevertLabel")
             })
         }
     }
@@ -157,7 +157,7 @@ class TimerSettingsViewController: UIViewController{
         BreakView.backgroundColor = .black
         BreakView.viewWithTag(1)?.backgroundColor = UIColor(named: "MainColor")
         let BreakLabel = self.BreakView.viewWithTag(2) as? UILabel
-        BreakLabel?.textColor = .black
+        BreakLabel?.textColor = UIColor(named: "RevertLabel")
         TimeForBreakText.isEnabled = false
         BreakTime.isEnabled = false
         BreakTimeStepperOutlet.isEnabled = false

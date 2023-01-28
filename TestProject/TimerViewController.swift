@@ -39,15 +39,20 @@ class TimerViewController: UIViewController {
     @IBAction func PauseButtonTouched(_ sender: UIButton) {
         timer.invalidate()
         if isTimerWorking {
-            PauseResumeButton.setTitle("Resume", for: .normal)
-            self.view.backgroundColor = .gray
+            UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
+                self.PauseResumeButton.setTitle("Resume", for: .normal)
+                self.view.backgroundColor = .gray
+            })
+            
         } else {
-            PauseResumeButton.setTitle("Pause", for: .normal)
-            if isBreak{
+            UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
+                self.PauseResumeButton.setTitle("Pause", for: .normal)
+                if self.isBreak{
                 self.view.backgroundColor = .yellow
             } else {
                 self.view.backgroundColor = .green
             }
+            })
             startTimer(time: currentTime)
         }
         isTimerWorking.toggle()
@@ -158,57 +163,65 @@ class TimerViewController: UIViewController {
     }
     
     func getReady(){
-        let activityLabel = ActivityView.viewWithTag(1) as! UILabel
-        activityLabel.text = "Get Ready"
-        self.view.backgroundColor = .yellow
-        view.viewWithTag(3)?.isHidden = true
-        view.viewWithTag(3)?.clipsToBounds = true
-        view.viewWithTag(3)?.layer.cornerRadius = 20
-        self.navigationController?.navigationBar.tintColor = .black
-        self.view.viewWithTag(2)?.isHidden = true
-        TimeLabel.textColor = .black
-        currentTime = 5
-        currentRound = 1
-        self.view.viewWithTag(2)?.clipsToBounds = true
-        self.view.viewWithTag(2)?.layer.cornerRadius = 20
-        let roundLabel = view.viewWithTag(3)?.viewWithTag(1) as! UILabel
-        roundLabel.text = "\(currentRound!)/\(rounds)"
+        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
+            let activityLabel = self.ActivityView.viewWithTag(1) as! UILabel
+            activityLabel.text = "Get Ready"
+            self.view.backgroundColor = .yellow
+            self.view.viewWithTag(3)?.isHidden = true
+            self.view.viewWithTag(3)?.clipsToBounds = true
+            self.view.viewWithTag(3)?.layer.cornerRadius = 20
+            self.navigationController?.navigationBar.tintColor = .black
+            self.view.viewWithTag(2)?.isHidden = true
+            self.TimeLabel.textColor = .black
+            self.currentTime = 5
+            self.currentRound = 1
+            self.view.viewWithTag(2)?.clipsToBounds = true
+            self.view.viewWithTag(2)?.layer.cornerRadius = 20
+            let roundLabel = self.view.viewWithTag(3)?.viewWithTag(1) as! UILabel
+            roundLabel.text = "\(self.currentRound!)/\(self.rounds)"
+        })
     }
     
     func timeEnded(){
-        view.viewWithTag(3)?.isHidden = true
-        let activityLabel = ActivityView.viewWithTag(1) as! UILabel
-        activityLabel.text = "End"
-        self.view.backgroundColor = .red
-        self.navigationController?.navigationBar.tintColor = .white
-        self.view.viewWithTag(2)?.isHidden = true
-        TimeLabel.textColor = .white
+        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
+            self.view.viewWithTag(3)?.isHidden = true
+            let activityLabel = self.ActivityView.viewWithTag(1) as! UILabel
+            activityLabel.text = "End"
+            self.view.backgroundColor = .red
+            self.navigationController?.navigationBar.tintColor = .white
+            self.view.viewWithTag(2)?.isHidden = true
+            self.TimeLabel.textColor = .white
+        })
         activateProximitySensor(isOn: false)
         Vibration.error.vibrate()
     }
     
     func timeStarted(){
-        view.viewWithTag(3)?.isHidden = false
         activateProximitySensor(isOn: false)
-        let activityLabel = ActivityView.viewWithTag(1) as! UILabel
-        activityLabel.text = "Training"
-        self.view.backgroundColor = .green
-        self.navigationController?.navigationBar.tintColor = .black
-        self.view.viewWithTag(2)?.isHidden = false
-        TimeLabel.textColor = .black
+        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
+            self.view.viewWithTag(3)?.isHidden = false
+            let activityLabel = self.ActivityView.viewWithTag(1) as! UILabel
+            activityLabel.text = "Training"
+            self.view.backgroundColor = .green
+            self.navigationController?.navigationBar.tintColor = .black
+            self.view.viewWithTag(2)?.isHidden = false
+            self.TimeLabel.textColor = .black
+        })
         activateProximitySensor(isOn: true)
         Vibration.error.vibrate()
     }
     
     func timeStoped(){
         activateProximitySensor(isOn: false)
-        view.viewWithTag(3)?.isHidden = false
-        let activityLabel = ActivityView.viewWithTag(1) as! UILabel
-        activityLabel.text = "Break"
-        self.view.backgroundColor = .yellow
-        self.navigationController?.navigationBar.tintColor = .black
-        self.view.viewWithTag(2)?.isHidden = false
-        TimeLabel.textColor = .black
+        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
+            self.view.viewWithTag(3)?.isHidden = false
+            let activityLabel = self.ActivityView.viewWithTag(1) as! UILabel
+            activityLabel.text = "Break"
+            self.view.backgroundColor = .yellow
+            self.navigationController?.navigationBar.tintColor = .black
+            self.view.viewWithTag(2)?.isHidden = false
+            self.TimeLabel.textColor = .black
+        })
         Vibration.error.vibrate()
         activateProximitySensor(isOn: true)
     }
