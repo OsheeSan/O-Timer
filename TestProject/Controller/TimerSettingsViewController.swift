@@ -56,6 +56,9 @@ class TimerSettingsViewController: UIViewController{
             TimeForBreakText.isEnabled = true
             BreakTime.isEnabled = true
             BreakTimeStepperOutlet.isEnabled = true
+            TimeForBreakText.isHidden = false
+            BreakTime.isHidden = false
+            BreakTimeStepperOutlet.isHidden = false
             timerManager.withBreak = true
             UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
                 self.BreakView.transform = CGAffineTransform(translationX: 0, y: 0)
@@ -68,6 +71,9 @@ class TimerSettingsViewController: UIViewController{
             TimeForBreakText.isEnabled = false
             BreakTime.isEnabled = false
             BreakTimeStepperOutlet.isEnabled = false
+            TimeForBreakText.isHidden = true
+            BreakTime.isHidden = true
+            BreakTimeStepperOutlet.isHidden = true
             timerManager.withBreak = false
             UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
                 self.BreakView.transform = CGAffineTransform(translationX: 0, y: 110)
@@ -152,19 +158,16 @@ class TimerSettingsViewController: UIViewController{
     }
     
     func setupBreakMenu(){
-        BreakView.transform = CGAffineTransform(translationX: 0, y: 110)
-        BreakView.backgroundColor = .black
-        BreakView.viewWithTag(1)?.backgroundColor = UIColor(named: "MainColor")
-        let BreakLabel = self.BreakView.viewWithTag(2) as? UILabel
-        BreakLabel?.textColor = UIColor(named: "RevertLabel")
         TimeForBreakText.isEnabled = false
         BreakTime.isEnabled = false
         BreakTimeStepperOutlet.isEnabled = false
+        TimeForBreakText.isHidden = true
+        BreakTime.isHidden = true
+        BreakTimeStepperOutlet.isHidden = true
         BreakView.clipsToBounds = true
         let BreakSwitchView = BreakView.viewWithTag(1)!
         BreakSwitchView.clipsToBounds = true
-        BreakSwitchView.layer.cornerRadius = BreakSwitchView.frame.height/2.3
-        BreakView.layer.cornerRadius = BreakSwitchView.frame.height/2.3+1
+        BreakSwitchView.layer.cornerRadius = 20
     }
     
     //MARK: - Segue prepare
