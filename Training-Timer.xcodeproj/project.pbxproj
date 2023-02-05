@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841B0D68298FF05500A56771 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841B0D67298FF05500A56771 /* Timer.swift */; };
 		844BA961297FF824008226F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BA960297FF824008226F0 /* AppDelegate.swift */; };
 		844BA963297FF824008226F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BA962297FF824008226F0 /* SceneDelegate.swift */; };
 		844BA968297FF824008226F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BA966297FF824008226F0 /* Main.storyboard */; };
@@ -17,9 +18,11 @@
 		84639BEE2981443F00903A07 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84639BED2981443F00903A07 /* TimerViewController.swift */; };
 		84639BF029828BD600903A07 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84639BEF29828BD600903A07 /* Functions.swift */; };
 		84639BF22982B24700903A07 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84639BF12982B24700903A07 /* Vibration.swift */; };
+		84B3CA1D2986936A00851448 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3CA1C2986936A00851448 /* LaunchScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		841B0D67298FF05500A56771 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		844BA95D297FF824008226F0 /* Training-Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Training-Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		844BA960297FF824008226F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		844BA962297FF824008226F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		84639BED2981443F00903A07 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		84639BEF29828BD600903A07 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		84639BF12982B24700903A07 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
+		84B3CA1C2986936A00851448 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		841B0D66298FF04500A56771 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				841B0D67298FF05500A56771 /* Timer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		841B0D69298FF05F00A56771 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84639BEB2981443000903A07 /* TimerSettingsViewController.swift */,
+				84639BED2981443F00903A07 /* TimerViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		844BA954297FF823008226F0 = {
 			isa = PBXGroup;
 			children = (
@@ -64,15 +85,16 @@
 		844BA95F297FF824008226F0 /* TestProject */ = {
 			isa = PBXGroup;
 			children = (
+				841B0D69298FF05F00A56771 /* Controller */,
+				841B0D66298FF04500A56771 /* Model */,
 				844BA960297FF824008226F0 /* AppDelegate.swift */,
 				844BA962297FF824008226F0 /* SceneDelegate.swift */,
+				84B3CA1C2986936A00851448 /* LaunchScreenViewController.swift */,
 				844BA966297FF824008226F0 /* Main.storyboard */,
 				844BA96C297FF825008226F0 /* Assets.xcassets */,
 				844BA96E297FF825008226F0 /* LaunchScreen.storyboard */,
 				844BA971297FF825008226F0 /* Info.plist */,
 				844BA969297FF824008226F0 /* TestProject.xcdatamodeld */,
-				84639BEB2981443000903A07 /* TimerSettingsViewController.swift */,
-				84639BED2981443F00903A07 /* TimerViewController.swift */,
 				84639BEF29828BD600903A07 /* Functions.swift */,
 				84639BF12982B24700903A07 /* Vibration.swift */,
 			);
@@ -152,9 +174,11 @@
 			files = (
 				84639BF22982B24700903A07 /* Vibration.swift in Sources */,
 				844BA961297FF824008226F0 /* AppDelegate.swift in Sources */,
+				84B3CA1D2986936A00851448 /* LaunchScreenViewController.swift in Sources */,
 				84639BEC2981443000903A07 /* TimerSettingsViewController.swift in Sources */,
 				844BA963297FF824008226F0 /* SceneDelegate.swift in Sources */,
 				84639BEE2981443F00903A07 /* TimerViewController.swift in Sources */,
+				841B0D68298FF05500A56771 /* Timer.swift in Sources */,
 				844BA96B297FF824008226F0 /* TestProject.xcdatamodeld in Sources */,
 				84639BF029828BD600903A07 /* Functions.swift in Sources */,
 			);
@@ -301,15 +325,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3R4JNXS3X7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestProject/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "O-Timer";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -318,7 +345,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Toshee.TestProject;
+				PRODUCT_BUNDLE_IDENTIFIER = "Toshee.O-Timer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -331,15 +358,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3R4JNXS3X7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestProject/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "O-Timer";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -348,7 +378,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Toshee.TestProject;
+				PRODUCT_BUNDLE_IDENTIFIER = "Toshee.O-Timer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

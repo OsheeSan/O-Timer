@@ -197,7 +197,7 @@ class TimerViewController: UIViewController {
     
     func timeStarted(){
         activateProximitySensor(isOn: false)
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
             self.view.viewWithTag(3)?.isHidden = false
             let activityLabel = self.ActivityView.viewWithTag(1) as! UILabel
             activityLabel.text = "Training"
