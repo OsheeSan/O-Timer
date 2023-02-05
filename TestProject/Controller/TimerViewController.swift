@@ -11,11 +11,7 @@ class TimerViewController: UIViewController {
     
     //MARK: - Timer variables
     
-    var rounds = 1
-    var timePerRound = 1
-    var withBreak = false
-    var TimeForBreak = 1
-    
+    var timerManager: TimerManager!
     
     var timer: Timer!
     
@@ -116,7 +112,7 @@ class TimerViewController: UIViewController {
             currentTime -= 1
         } else {
             timer.invalidate()
-            currentTime = timePerRound
+            currentTime = timerManager.timePerRound
             timeStarted()
             startTimer(time: currentTime)
         }
@@ -129,23 +125,23 @@ class TimerViewController: UIViewController {
             currentTime -= 1
         } else {
             timer.invalidate()
-            if withBreak {
+            if timerManager.withBreak {
                 if isBreak {
-                    currentTime = timePerRound
-                    startTimer(time: timePerRound)
+                    currentTime = timerManager.timePerRound
+                    startTimer(time: timerManager.timePerRound)
                     isBreak.toggle()
                 } else {
-                    if currentRound < rounds {
+                    if currentRound < timerManager.rounds {
                         currentRound += 1
-                        currentTime = TimeForBreak
-                        startTimer(time: TimeForBreak)
+                        currentTime = timerManager.breakTime
+                        startTimer(time: timerManager.breakTime)
                         isBreak.toggle()
                     } else {
                        timeEnded()
                     }
                 }
             } else {
-                if currentRound < rounds {
+                if currentRound < timerManager.rounds {
                     currentRound += 1
                     currentTime = 5
                     startReadyTimer(time: currentTime)
@@ -160,7 +156,7 @@ class TimerViewController: UIViewController {
         }
         TimeLabel.text = "\(timeToString(currentTime))"
         let roundLabel = view.viewWithTag(3)?.viewWithTag(1) as! UILabel
-        roundLabel.text = "\(currentRound!)/\(rounds)"
+        roundLabel.text = "\(currentRound!)/\(timerManager.rounds)"
     }
     
     func getReady(){
@@ -178,7 +174,7 @@ class TimerViewController: UIViewController {
             self.view.viewWithTag(2)?.clipsToBounds = true
             self.view.viewWithTag(2)?.layer.cornerRadius = 20
             let roundLabel = self.view.viewWithTag(3)?.viewWithTag(1) as! UILabel
-            roundLabel.text = "\(self.currentRound!)/\(self.rounds)"
+            roundLabel.text = "\(self.currentRound!)/\(timerManager.rounds)"
         
     }
     

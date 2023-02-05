@@ -9,12 +9,12 @@ import Foundation
 
 
 class TimerManager {
-    var rounds: Double = 1
-    var timePerRound = 0.5
-    var withBreak = false
-    var breakTime: Double = 0.25
+    var rounds: Int
+    var timePerRound: Int
+    var withBreak: Bool
+    var breakTime: Int
     
-    init(rounds: Double, timePerRound: Double, withBreak: Bool, breakTime: Double) {
+    init(rounds: Int, timePerRound: Int, withBreak: Bool, breakTime: Int) {
         self.rounds = rounds
         self.timePerRound = timePerRound
         self.withBreak = withBreak
@@ -23,8 +23,8 @@ class TimerManager {
     
     init(){
         self.rounds = 1
-        self.timePerRound = 0.5
+        self.timePerRound = 15
         self.withBreak = false
-        self.breakTime = 0.25
+        self.breakTime = 10
     }
 }

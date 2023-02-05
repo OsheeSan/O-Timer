@@ -42,7 +42,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQx-6Z-lZO" userLabel="Info View">
                                 <rect key="frame" x="0.0" y="112.5" width="320" height="128"/>
                                 <subviews>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="7Zu-nQ-esa">
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minimumValue="15" maximumValue="300" stepValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="7Zu-nQ-esa">
                                         <rect key="frame" x="218" y="63" width="94" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="WHe-YU-Ec8"/>
@@ -149,7 +149,7 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="sTj-TF-U1v">
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minimumValue="10" maximumValue="120" stepValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="sTj-TF-U1v">
                                         <rect key="frame" x="214" y="106" width="94" height="32"/>
                                         <connections>
                                             <action selector="BreakTimeStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="6xs-g9-aB9"/>

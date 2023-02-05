@@ -23,7 +23,7 @@ class TimerSettingsViewController: UIViewController{
     @IBOutlet weak var TimePerRoundLabel: UILabel!
     
     @IBAction func RoundsStepper(_ sender: UIStepper) {
-        timerManager.rounds = sender.value
+        timerManager.rounds = Int(sender.value)
         updateLabels()
         Vibration.light.vibrate()
         if timerManager.rounds > 1 {
@@ -38,7 +38,7 @@ class TimerSettingsViewController: UIViewController{
     }
     
     @IBAction func TimeStepper(_ sender: UIStepper) {
-        timerManager.timePerRound = sender.value/2
+        timerManager.timePerRound = Int(sender.value)
         updateLabels()
         Vibration.light.vibrate()
     }
@@ -80,7 +80,7 @@ class TimerSettingsViewController: UIViewController{
     }
     
     @IBAction func BreakTimeStepper(_ sender: UIStepper) {
-        timerManager.breakTime = sender.value/4
+        timerManager.breakTime = Int(sender.value)
         updateLabels()
         Vibration.light.vibrate()
     }
@@ -107,9 +107,9 @@ class TimerSettingsViewController: UIViewController{
     //MARK: - Helper methods
     
     func updateLabels(){
-        RoundsLabel.text = String(Int(timerManager.rounds))
-        TimePerRoundLabel.text = String(timerManager.timePerRound)
-        BreakTime.text = String(timerManager.breakTime)
+        RoundsLabel.text = String(timerManager.rounds)
+        TimePerRoundLabel.text = timeToString(timerManager.timePerRound)
+        BreakTime.text = timeToString(timerManager.breakTime)
     }
     
     func configureBreakSwitch(){
@@ -174,10 +174,7 @@ class TimerSettingsViewController: UIViewController{
             Vibration.heavy.vibrate()
             print("Timer Started")
             let controller = segue.destination as! TimerViewController
-            controller.timePerRound = Int(timerManager.timePerRound*60)
-            controller.rounds = Int(timerManager.rounds)
-            controller.TimeForBreak = Int(timerManager.breakTime*60)
-            controller.withBreak = timerManager.withBreak
+            controller.timerManager = self.timerManager
         }
     }
 
