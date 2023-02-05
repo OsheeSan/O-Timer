@@ -16,6 +16,7 @@ class TimerViewController: UIViewController {
     var withBreak = false
     var TimeForBreak = 1
     
+    
     var timer: Timer!
     
     var isTimerWorking = true

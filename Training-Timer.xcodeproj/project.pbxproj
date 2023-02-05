@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		841B0D68298FF05500A56771 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841B0D67298FF05500A56771 /* Timer.swift */; };
 		844BA961297FF824008226F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BA960297FF824008226F0 /* AppDelegate.swift */; };
 		844BA963297FF824008226F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BA962297FF824008226F0 /* SceneDelegate.swift */; };
 		844BA968297FF824008226F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BA966297FF824008226F0 /* Main.storyboard */; };
 		844BA96B297FF824008226F0 /* TestProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 844BA969297FF824008226F0 /* TestProject.xcdatamodeld */; };
 		844BA96D297FF825008226F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844BA96C297FF825008226F0 /* Assets.xcassets */; };
 		844BA970297FF825008226F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BA96E297FF825008226F0 /* LaunchScreen.storyboard */; };
+		844FC914298FF52400703194 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844FC913298FF52400703194 /* TimerManager.swift */; };
 		84639BEC2981443000903A07 /* TimerSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84639BEB2981443000903A07 /* TimerSettingsViewController.swift */; };
 		84639BEE2981443F00903A07 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84639BED2981443F00903A07 /* TimerViewController.swift */; };
 		84639BF029828BD600903A07 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84639BEF29828BD600903A07 /* Functions.swift */; };
@@ -22,7 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		841B0D67298FF05500A56771 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		844BA95D297FF824008226F0 /* Training-Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Training-Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		844BA960297FF824008226F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		844BA962297FF824008226F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +30,7 @@
 		844BA96C297FF825008226F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		844BA96F297FF825008226F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		844BA971297FF825008226F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		844FC913298FF52400703194 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		84639BEB2981443000903A07 /* TimerSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSettingsViewController.swift; sourceTree = "<group>"; };
 		84639BED2981443F00903A07 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		84639BEF29828BD600903A07 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		841B0D66298FF04500A56771 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				841B0D67298FF05500A56771 /* Timer.swift */,
+				844FC913298FF52400703194 /* TimerManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,7 +178,7 @@
 				84639BEC2981443000903A07 /* TimerSettingsViewController.swift in Sources */,
 				844BA963297FF824008226F0 /* SceneDelegate.swift in Sources */,
 				84639BEE2981443F00903A07 /* TimerViewController.swift in Sources */,
-				841B0D68298FF05500A56771 /* Timer.swift in Sources */,
+				844FC914298FF52400703194 /* TimerManager.swift in Sources */,
 				844BA96B297FF824008226F0 /* TestProject.xcdatamodeld in Sources */,
 				84639BF029828BD600903A07 /* Functions.swift in Sources */,
 			);

@@ -1,5 +1,5 @@
 //
-//  Timer.swift
+//  TimerManager.swift
 //  Training-Timer
 //
 //  Created by admin on 05.02.2023.
@@ -7,7 +7,8 @@
 
 import Foundation
 
-class Timer {
+
+class TimerManager {
     var rounds: Double = 1
     var timePerRound = 0.5
     var withBreak = false
@@ -18,5 +19,12 @@ class Timer {
         self.timePerRound = timePerRound
         self.withBreak = withBreak
         self.breakTime = breakTime
+    }
+    
+    init(){
+        self.rounds = 1
+        self.timePerRound = 0.5
+        self.withBreak = false
+        self.breakTime = 0.25
     }
 }

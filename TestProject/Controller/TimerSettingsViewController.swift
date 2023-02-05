@@ -23,10 +23,10 @@ class TimerSettingsViewController: UIViewController{
     @IBOutlet weak var TimePerRoundLabel: UILabel!
     
     @IBAction func RoundsStepper(_ sender: UIStepper) {
-        rounds = sender.value
+        timerManager.rounds = sender.value
         updateLabels()
         Vibration.light.vibrate()
-        if rounds > 1 {
+        if timerManager.rounds > 1 {
             BreakSwitch.isEnabled = true
             updateBreakSwitch()
         } else {
@@ -38,7 +38,7 @@ class TimerSettingsViewController: UIViewController{
     }
     
     @IBAction func TimeStepper(_ sender: UIStepper) {
-        timePerRound = sender.value/2
+        timerManager.timePerRound = sender.value/2
         updateLabels()
         Vibration.light.vibrate()
     }
@@ -56,7 +56,7 @@ class TimerSettingsViewController: UIViewController{
             TimeForBreakText.isEnabled = true
             BreakTime.isEnabled = true
             BreakTimeStepperOutlet.isEnabled = true
-            withBreak = true
+            timerManager.withBreak = true
             UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
                 self.BreakView.transform = CGAffineTransform(translationX: 0, y: 0)
                 self.BreakView.backgroundColor = UIColor(named: "MainColor")
@@ -68,7 +68,7 @@ class TimerSettingsViewController: UIViewController{
             TimeForBreakText.isEnabled = false
             BreakTime.isEnabled = false
             BreakTimeStepperOutlet.isEnabled = false
-            withBreak = false
+            timerManager.withBreak = false
             UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, animations: {
                 self.BreakView.transform = CGAffineTransform(translationX: 0, y: 110)
                 self.BreakView.backgroundColor = .black
@@ -80,7 +80,7 @@ class TimerSettingsViewController: UIViewController{
     }
     
     @IBAction func BreakTimeStepper(_ sender: UIStepper) {
-        breakTime = sender.value/4
+        timerManager.breakTime = sender.value/4
         updateLabels()
         Vibration.light.vibrate()
     }
@@ -92,10 +92,7 @@ class TimerSettingsViewController: UIViewController{
     
     //MARK: - Timer variables
     
-    var rounds: Double = 1
-    var timePerRound = 0.5
-    var withBreak = false
-    var breakTime: Double = 0.25
+    var timerManager = TimerManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,9 +107,9 @@ class TimerSettingsViewController: UIViewController{
     //MARK: - Helper methods
     
     func updateLabels(){
-        RoundsLabel.text = String(Int(rounds))
-        TimePerRoundLabel.text = String(timePerRound)
-        BreakTime.text = String(breakTime)
+        RoundsLabel.text = String(Int(timerManager.rounds))
+        TimePerRoundLabel.text = String(timerManager.timePerRound)
+        BreakTime.text = String(timerManager.breakTime)
     }
     
     func configureBreakSwitch(){
@@ -177,10 +174,10 @@ class TimerSettingsViewController: UIViewController{
             Vibration.heavy.vibrate()
             print("Timer Started")
             let controller = segue.destination as! TimerViewController
-            controller.timePerRound = Int(timePerRound*60)
-            controller.rounds = Int(rounds)
-            controller.TimeForBreak = Int(breakTime*60)
-            controller.withBreak = withBreak
+            controller.timePerRound = Int(timerManager.timePerRound*60)
+            controller.rounds = Int(timerManager.rounds)
+            controller.TimeForBreak = Int(timerManager.breakTime*60)
+            controller.withBreak = timerManager.withBreak
         }
     }
 
